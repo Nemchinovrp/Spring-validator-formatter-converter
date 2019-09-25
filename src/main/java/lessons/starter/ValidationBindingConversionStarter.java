@@ -23,9 +23,8 @@ import java.util.Locale;
 
 public class ValidationBindingConversionStarter {
 
-    private static ValidationBindingConversionStarter starter;
-
     private static final Logger logger = LogManager.getLogger(ValidationBindingConversionStarter.class);
+    private static ValidationBindingConversionStarter starter;
 
     public static void main(String[] args) {
         logger.info("Starting configuration...");
@@ -49,12 +48,12 @@ public class ValidationBindingConversionStarter {
         logger.info("Count errors: " + dataBinder.getBindingResult().getErrorCount());
 
         ObjectError error = dataBinder.getBindingResult().getAllErrors().get(0);
-        logger.info("Error \"" +error.getCode() + "\": " + messageSource.getMessage(error.getCode(), null, Locale.ROOT));
+        logger.info("Error \"" + error.getCode() + "\": " + messageSource.getMessage(error.getCode(), null, Locale.ROOT));
 
         error = dataBinder.getBindingResult().getAllErrors().get(1);
         MessageCodesResolver codesResolver = new DefaultMessageCodesResolver();
         String[] codes = codesResolver.resolveMessageCodes(error.getCode(), "age"); //указываем, по какому полю объекта мы хотим получить коды ошибок
-        logger.info("Error \"" +codes[0] + "\": " + messageSource.getMessage(codes[0], null, Locale.ROOT));
+        logger.info("Error \"" + codes[0] + "\": " + messageSource.getMessage(codes[0], null, Locale.ROOT));
     }
 
     private void beanWrapperExample() {

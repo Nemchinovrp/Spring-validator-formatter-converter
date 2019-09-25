@@ -6,5 +6,7 @@ public class BeanWithDependency {
 
     public BeanWithDependency(GreetingService greetingService) { /* что-то делаем*/ }
 
-    public String printText() { return "Some text";}
+    public String printText() {
+        return "Some text";
+    }
 }

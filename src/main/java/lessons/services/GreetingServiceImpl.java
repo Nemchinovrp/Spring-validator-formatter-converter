@@ -19,24 +19,40 @@ public class GreetingServiceImpl implements GreetingService, InitializingBean, D
     private static final Logger logger = LogManager.getLogger(GreetingService.class);
 
     @Override
-    public String sayGreeting() { return "Greeting, user!"; }
+    public String sayGreeting() {
+        return "Greeting, user!";
+    }
 
     @Override
-    public void afterPropertiesSet() throws Exception { logger.info("invoke afterPropertiesSet method"); }
+    public void afterPropertiesSet() throws Exception {
+        logger.info("invoke afterPropertiesSet method");
+    }
 
     @Override
-    public void destroy() throws Exception { logger.info("invoke destroy method"); }
+    public void destroy() throws Exception {
+        logger.info("invoke destroy method");
+    }
 
-    public void initMethod() { logger.info("invoke initMethod method"); }
+    public void initMethod() {
+        logger.info("invoke initMethod method");
+    }
 
-    public void destroyMethod() { logger.info("invoke destroyMethod method"); }
+    public void destroyMethod() {
+        logger.info("invoke destroyMethod method");
+    }
 
     @PostConstruct
-    public void postConctructMethod() { logger.info("invoke postConctructMethod method"); }
+    public void postConctructMethod() {
+        logger.info("invoke postConctructMethod method");
+    }
 
     @PostConstruct
-    public void anotherPostConctructMethod() { logger.info("invoke anotherPostConctructMethod method"); }
+    public void anotherPostConctructMethod() {
+        logger.info("invoke anotherPostConctructMethod method");
+    }
 
     @PreDestroy
-    public void preDestroyMethod() { logger.info("invoke preDestroyMethod method"); }
+    public void preDestroyMethod() {
+        logger.info("invoke preDestroyMethod method");
+    }
 }
